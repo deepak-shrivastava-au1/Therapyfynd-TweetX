@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import { render } from '@testing-library/react';
 import {  Link } from "react-router-dom";
+import Fire from './Fire';
 
 
 
@@ -8,10 +9,8 @@ class SignUp extends Component{
     constructor(props){
         super(props);
         this.state = {
-            name:'',
             email:'',
-            password:'',
-            confirmPassword:''
+            password:''
 
         }
     }
@@ -21,8 +20,12 @@ onChange = (e) => {
     this.setState({ [e.target.id]: e.target.value });
   }
 
-onSubmit = (e) => {
-    e.preventDeafult();
+onSubmit = () => {
+    Fire.auth().createUserWithEmailAndPassword(this.state.email,this.state.password).then((u)=>{
+        alert('New User Created Successfully');
+      }).catch((error)=>{
+        alert('User Could not be registered');
+      });
   };
  
   render() {
@@ -83,7 +86,7 @@ onSubmit = (e) => {
                         />
                     <div className = "row">
                         <div className = "offset-md-8 col-sm-4">
-                            <button>Sign up</button>
+                            <button onClick = {this.onSubmit}>Sign up</button>
                         </div>
                     </div>
                   </form>
