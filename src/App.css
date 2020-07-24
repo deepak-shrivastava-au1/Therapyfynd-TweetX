@@ -36,3 +36,48 @@
     transform: rotate(360deg);
   }
 }
+
+
+/* SignUp */
+
+form.signup input {
+  width: 100%;
+  height: 42px;
+  padding-left: 20px;
+  border-radius: 10px;
+  border: none;
+  background: antiquewhite;
+  margin-top: 20px;
+}
+
+form.signup button{
+  width: 100%;
+  border: none;
+  background-color: red;
+  color: white;
+  border-radius: 10px;
+  height: 42px;
+  margin-top: 20px;
+  
+}
+
+/* profile */
+div#posts li {
+  list-style: none;
+  display: inline-block;
+  margin-left: 15px;
+  font-size: 12px;
+}
+li.first {
+  margin-left: -39px !important;
+}
+div#slider {
+  margin-top: 30px;
+  border-top: 1px solid gray;
+}
+div#slider button {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 10px;
+}
